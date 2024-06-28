@@ -1,8 +1,8 @@
 package com.example.coffeeapp.domain
 
-class GetValidInputUseCase {
+class GetValidInputUseCase(private val appRepository: AppRepository) {
 
     fun getValidInput(user:User):Boolean{
-        TODO()
+        return appRepository.getValidInput(user)
     }
 }
