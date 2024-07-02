@@ -1,17 +1,15 @@
 package com.example.coffeeapp.presentation
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
-import com.example.coffeeapp.R
 import com.example.coffeeapp.databinding.ActivityMainBinding
 import com.example.coffeeapp.domain.User
+import com.example.coffeeapp.presentation.viewModel.LogInViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,16 +42,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun validate():Boolean{
-        val login:String = binding.EditLoginString.text.toString()
-        val password:String = binding.EditLoginPassword.text.toString()
-        if (login!="" && password != "") {
-         return  viewModel.validateUser(User(login,password))
-        } else Toast.makeText(this, "Заполните все поля!", Toast.LENGTH_SHORT).show()
-        return false
+        val login:String = binding.EditLoginString.text.toString().trim()
+        val password:String = binding.EditLoginPassword.text.toString().trim()
+        if (login.isEmpty() && password.isEmpty()) {
+            Toast.makeText(this, "Заполните все поля!", Toast.LENGTH_SHORT).show()
+            return false
+        } else  return  viewModel.validateUser(User(login,password))
     }
 
-    private fun launchNextPage(){
-        val intent = Intent(this, OrderActivity::class.java)
+    private fun launchNextPage() {
+        val intent = OrderActivity.newIntent(this)
         startActivity(intent)
     }
 

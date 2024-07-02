@@ -1,4 +1,4 @@
-package com.example.coffeeapp.presentation
+package com.example.coffeeapp.presentation.viewModel
 
 import androidx.lifecycle.ViewModel
 import com.example.coffeeapp.data.AppRepositoryImpl

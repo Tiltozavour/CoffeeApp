@@ -4,6 +4,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/main"
+    android:background="@color/background"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -19,19 +21,22 @@
             <ImageView
                 android:id="@+id/dinosaurImage"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:adjustViewBounds="true"
                 android:contentDescription="@null"
                 android:src="@drawable/dinosavour" />
 
             <TextView
                 android:id="@+id/textViewWelcome"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:padding="16dp"
                 android:text="@string/welcome"
+                android:gravity="center"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="@color/textColor"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -64,6 +69,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginBottom="24dp"
+                android:textColor="@color/textColor"
                 android:text="@string/ButtonInput" />
 
 
