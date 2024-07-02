@@ -1,10 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/backgroundSecondActivity"
     tools:context=".presentation.OrderActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textViewGreetings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="14dp"
+        android:textColor="@color/textColor"
+        android:textAlignment="center"
+        android:text="@string/hellow_text">
+
+    </TextView>
+
+  <RadioGroup
+     android:id="@+id/radioGroupDrink"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:gravity="center"
+      >
+
+      <RadioButton
+          android:id="@+id/coffeeRadio"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:text="@string/Coffee"/>
+      <RadioButton
+          android:id="@+id/teaRadio"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="8dp"
+          android:text="@string/tea"/>
+      <RadioButton
+          android:id="@+id/cacaoRadio"
+          android:layout_margin="8dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/Cacao"/>
+
+  </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/textViewTypes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:text="@string/choice_type"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:textColor="@color/textColor"
+        android:textSize="20sp"
+        tools:visibility="visible">
+
+    </TextView>
+
+    <Spinner
+        android:id="@+id/spinnerChoiceDrink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+
+    <TextView
+        android:id="@+id/textViewAddictive"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_margin="14dp"
+        android:textColor="@color/textColor"
+        android:textAlignment="center"
+        android:text="@string/addictive"
+        tools:visibility="visible">
+
+    </TextView>
+
+    <Spinner
+        android:id="@+id/spinnerAddictiveSugar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+    <Spinner
+        android:id="@+id/spinnerAddictiveSirop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+
+    <Button
+        android:id="@+id/buttonNextPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:background="@color/background"
+        android:text="Order" />
+
+</LinearLayout>
+

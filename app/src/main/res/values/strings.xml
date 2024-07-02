@@ -9,7 +9,41 @@
     <string name="Coffee">Кофи</string>
     <string name="Cacao">Какаву</string>
     <string name="choice_type">Выбeрем какой %s</string>
-    <string name="addictive">Какой %s?</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="addictive">Что добавим?</string>
+    <string name="sugar">Сахар</string>
+
+
+    <string-array name="types_of_tea">
+        <item> Зеленый </item>
+        <item> Черный </item>
+        <item> Каркаде </item>
+
+    </string-array>
+
+    <string-array name="types_of_coffee">
+        <item> Эспрессо </item>
+        <item> Капучино </item>
+        <item> Латте </item>
+    </string-array>
+
+    <string-array name="types_of_cacao">
+        <item> На обычно молоке </item>
+        <item> На миндальном молоке </item>
+        <item> На какосовом молоке </item>
+    </string-array>
+
+    <string-array name="count_of_sugar">
+        <item> Без сахара </item>
+        <item> Слабосладкий </item>
+        <item> Среднесладкий </item>
+        <item> Приторный </item>
+    </string-array>
+
+    <string-array name="choice_of_sirop">
+        <item> Без сиропа </item>
+        <item> Миндальный </item>
+        <item> Карамельный </item>
+        <item> Ореховый </item>
+    </string-array>
+
 </resources>
