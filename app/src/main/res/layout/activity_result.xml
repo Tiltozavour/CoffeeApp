@@ -26,56 +26,68 @@
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:layout_margin="24dp"
-            android:text="Кофи">
+            android:text="Напиток">
         </TextView>
+
+        <TextView
+            android:id="@+id/drinkTypes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_margin="24dp"
+            android:text="@string/for_drink">
+        </TextView>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:layout_margin="24dp"
-            android:text="Кофи">
+            android:text="@string/just_type">
         </TextView>
+
+        <TextView
+            android:id="@+id/drinkTypesChoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_margin="24dp"
+            android:text="@string/drinkTypesChoice">
+        </TextView>
+
+        <TextView
+            android:id="@+id/SugarTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_margin="24dp"
+            android:text="@string/sugar">
+        </TextView>
+
+        <TextView
+            android:id="@+id/SugarCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:layout_margin="24dp"
+            android:text="@string/sugar_count">
+        </TextView>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:layout_margin="24dp"
-            android:text="Кофи">
+            android:text="@string/sirop_TV">
         </TextView>
+
         <TextView
+            android:id="@+id/siropCount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="24sp"
             android:layout_margin="24dp"
-            android:text="Кофи">
-        </TextView>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:layout_margin="24dp"
-            android:text="Кофи">
-        </TextView>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:layout_margin="24dp"
-            android:text="Кофи">
-        </TextView>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:layout_margin="24dp"
-            android:text="Кофи">
-        </TextView>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:layout_margin="24dp"
-            android:text="Кофи">
+            android:text="@string/sirop_count">
         </TextView>
 
 

@@ -2,7 +2,7 @@ package com.example.coffeeapp.presentation.viewModel
 
 import androidx.lifecycle.ViewModel
 import com.example.coffeeapp.data.AppRepositoryImpl
-import com.example.coffeeapp.domain.GetValidInputUseCase
+import com.example.coffeeapp.domain.useCases.GetValidInputUseCase
 import com.example.coffeeapp.domain.User
 
 class LogInViewModel:ViewModel() {

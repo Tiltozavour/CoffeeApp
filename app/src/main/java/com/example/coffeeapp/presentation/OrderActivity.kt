@@ -16,6 +16,11 @@ import com.example.coffeeapp.presentation.viewModel.OrderViewModel
 
 class OrderActivity : AppCompatActivity() {
 
+     var DRINK = ""
+     var TYPE_OF_DRINK = ""
+     var SUGAR = ""
+     var SIROP = ""
+
     private val binding by lazy {
         ActivityOrderBinding.inflate(layoutInflater)
     }
@@ -38,11 +43,21 @@ class OrderActivity : AppCompatActivity() {
     }
 
     private fun checkedDrinks(){
+
         binding.radioGroupDrink.setOnCheckedChangeListener { group, checkedId ->
            when(checkedId) {
-               binding.teaRadio.id -> teaLaunch()
-               binding.coffeeRadio.id -> coffeeLaunch()
-               binding.cacaoRadio.id -> cacaoLaunch()
+               binding.teaRadio.id -> {
+                   teaLaunch()
+                   DRINK = KEY_TEA
+               }
+               binding.coffeeRadio.id -> {
+                   coffeeLaunch()
+                   DRINK = KEY_COFFEE
+               }
+               binding.cacaoRadio.id -> {
+                   cacaoLaunch()
+                   DRINK = KEY_CACAO
+               }
            }
             binding.textViewTypes.visibility = View.VISIBLE
         }
@@ -56,7 +71,6 @@ class OrderActivity : AppCompatActivity() {
         binding.spinnerChoiceDrink.visibility = View.VISIBLE
         adapterSpinnerForChoiceDrink(resources.getStringArray(R.array.types_of_tea))
         getAddictive(KEY_TEA)
-
     }
 
     private fun coffeeLaunch() {
@@ -72,13 +86,14 @@ class OrderActivity : AppCompatActivity() {
         typeOfDrink = getString(R.string.Cacao)
         typeOfDrinkLabel= getString(R.string.choice_type, typeOfDrink)
         binding.textViewTypes.text = typeOfDrinkLabel
-        binding.spinnerChoiceDrink.visibility = View.GONE
+        binding.spinnerChoiceDrink.visibility = View.VISIBLE
         adapterSpinnerForChoiceDrink(resources.getStringArray(R.array.types_of_cacao))
         getAddictive(KEY_CACAO)
     }
 
     private fun getAddictive(key:String){
         binding.textViewAddictive.visibility = View.VISIBLE
+
 
         when(key){
             KEY_TEA -> {
@@ -131,9 +146,13 @@ class OrderActivity : AppCompatActivity() {
         }
     }
 
+
     private fun launchNextPage(){
         binding.buttonNextPage.setOnClickListener {
-            val intent = ResultActivity.newIntent(this)
+            TYPE_OF_DRINK =  binding.spinnerChoiceDrink.selectedItem.toString()
+            SUGAR = binding.spinnerAddictiveSugar.selectedItem.toString()
+            SIROP = binding.spinnerAddictiveSirop.selectedItem.toString()
+            val intent = ResultActivity.newIntent(this, DRINK, TYPE_OF_DRINK,SUGAR,SIROP)
             startActivity(intent)
         }
 
@@ -143,9 +162,9 @@ class OrderActivity : AppCompatActivity() {
 
         private var typeOfDrink = "Nothing"
         private var typeOfDrinkLabel = "Nothing"
-        private const val KEY_TEA = "чай"
-        private const val KEY_COFFEE = "кофе"
-        private const val KEY_CACAO = "какау"
+        private const val KEY_TEA = "Чай"
+        private const val KEY_COFFEE = "Кофи"
+        private const val KEY_CACAO = "Какаву"
 
         fun newIntent(context: Context):Intent{
             val intent = Intent(context, OrderActivity::class.java)

@@ -1,6 +1,8 @@
 package com.example.coffeeapp.data
 
+import androidx.lifecycle.LiveData
 import com.example.coffeeapp.domain.AppRepository
+import com.example.coffeeapp.domain.Order
 import com.example.coffeeapp.domain.User
 
 object AppRepositoryImpl:AppRepository {
@@ -12,4 +14,5 @@ object AppRepositoryImpl:AppRepository {
     override fun getUserNameUseCases(): User {
         return User()
     }
+
 }

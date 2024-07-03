@@ -11,6 +11,12 @@
     <string name="choice_type">Выбeрем какой %s</string>
     <string name="addictive">Что добавим?</string>
     <string name="sugar">Сахар</string>
+    <string name="for_drink">%s</string>
+    <string name="just_type">Тип</string>
+    <string name="drinkTypesChoice">%s</string>
+    <string name="sugar_count">%s</string>
+    <string name="sirop_TV">Сиропчик</string>
+    <string name="sirop_count">%s</string>
 
 
     <string-array name="types_of_tea">
@@ -27,7 +33,7 @@
     </string-array>
 
     <string-array name="types_of_cacao">
-        <item> На обычно молоке </item>
+        <item> На обычном молоке </item>
         <item> На миндальном молоке </item>
         <item> На какосовом молоке </item>
     </string-array>

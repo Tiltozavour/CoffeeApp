@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.coffeeapp.data.AppRepositoryImpl
-import com.example.coffeeapp.domain.GetUserNameUseCases
+import com.example.coffeeapp.domain.useCases.GetUserNameUseCases
 
 class OrderViewModel:ViewModel() {
 
@@ -16,6 +16,7 @@ class OrderViewModel:ViewModel() {
     private val _userLogin = MutableLiveData<String>()
     val userLogin:LiveData<String>
         get() = _userLogin
+
 
    fun getUserName() {
         _userLogin.value = getUserLogin.getUserNameUseCases().login
