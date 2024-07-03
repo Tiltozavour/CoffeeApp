@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -26,29 +27,40 @@ class ResultActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        //напиток
-        val drink = intent.getStringExtra(KEY_DRINK)
-        val greetings = getString(R.string.for_drink,drink)
-        binding.drinkTypes.text = greetings
-
-            //тип напитка
-        val typesOfDrink = intent.getStringExtra(KEY_TYPE_OF_DRINK)
-        val greetings2 = getString(R.string.drinkTypesChoice,typesOfDrink)
-        binding.drinkTypesChoice.text = greetings2
-
-            //Сахар
-        val sugar = intent.getStringExtra(KEY_SUGAR)
-        val greetings3 = getString(R.string.sugar_count,sugar)
-        binding.SugarCount.text = greetings3
-
-            //Сироп
-        val sirop = intent.getStringExtra(KEY_SIROP)
-        val greetings4 = getString(R.string.sugar_count,sirop)
-        binding.siropCount.text = greetings4
+        getOrderForTextView()
 
 
 
     }
+
+    private fun getOrderForTextView(){
+        //напиток
+        val drink = intent.getStringExtra(KEY_DRINK)
+        val drinkString = getString(R.string.for_drink,drink)
+        binding.drinkTypes.text = drinkString
+
+        //тип напитка
+        val typesOfDrink = intent.getStringExtra(KEY_TYPE_OF_DRINK)
+        val typesOfDrinkString = getString(R.string.drinkTypesChoice,typesOfDrink)
+        binding.drinkTypesChoice.text = typesOfDrinkString
+        //Сахар
+        val sugar = intent.getStringExtra(KEY_SUGAR)
+        val sugarString = getString(R.string.sugar_count,sugar)
+        binding.SugarCount.text = sugarString
+        //Сироп
+        val sirop = intent.getStringExtra(KEY_SIROP)
+            val siropString = getString(R.string.sugar_count,sirop)
+            binding.siropCount.text = siropString
+
+        if (drink == KEY_TEA){
+            with(binding){
+                siropTextView.visibility = View.GONE
+                siropCount.visibility = View.GONE
+            }
+        }
+    }
+
+
 
     companion object {
 
@@ -56,6 +68,7 @@ class ResultActivity : AppCompatActivity() {
         const val KEY_TYPE_OF_DRINK = "types"
         const val KEY_SUGAR = "sugar"
         const val KEY_SIROP = "sirop"
+        private const val KEY_TEA = "Чай"
 
         fun newIntent(context: Context,drink:String,typeDrink:String,sugar:String,sirop:String):Intent{
             val intent = Intent(context, ResultActivity::class.java)

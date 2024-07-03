@@ -17,6 +17,9 @@
     <string name="sugar_count">%s</string>
     <string name="sirop_TV">Сиропчик</string>
     <string name="sirop_count">%s</string>
+    <string name="your_order">Ваш заказ:</string>
+    <string name="drinks">Напиток</string>
+    <string name="Order">Заказать</string>
 
 
     <string-array name="types_of_tea">

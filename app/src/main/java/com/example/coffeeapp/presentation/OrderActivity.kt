@@ -151,7 +151,10 @@ class OrderActivity : AppCompatActivity() {
         binding.buttonNextPage.setOnClickListener {
             TYPE_OF_DRINK =  binding.spinnerChoiceDrink.selectedItem.toString()
             SUGAR = binding.spinnerAddictiveSugar.selectedItem.toString()
-            SIROP = binding.spinnerAddictiveSirop.selectedItem.toString()
+            if ( binding.spinnerAddictiveSirop.visibility == View.VISIBLE){
+                SIROP = binding.spinnerAddictiveSirop.selectedItem.toString()
+            } else SIROP = KEY_NOTHING
+
             val intent = ResultActivity.newIntent(this, DRINK, TYPE_OF_DRINK,SUGAR,SIROP)
             startActivity(intent)
         }
@@ -165,6 +168,7 @@ class OrderActivity : AppCompatActivity() {
         private const val KEY_TEA = "Чай"
         private const val KEY_COFFEE = "Кофи"
         private const val KEY_CACAO = "Какаву"
+         const val KEY_NOTHING = "без сиропчика"
 
         fun newIntent(context: Context):Intent{
             val intent = Intent(context, OrderActivity::class.java)

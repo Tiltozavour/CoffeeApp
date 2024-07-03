@@ -4,5 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background">#BFBBBA </color>
     <color name="backgroundSecondActivity">#695850 </color>
+    <color name="backgroundThirdActivity">#17120E </color>
     <color name="textColor"> #17120E </color>
+    <color name="textColorForThird">#BFBBBA </color>
 </resources>
