@@ -4,6 +4,7 @@
     android:id="@+id/main"
     android:background="@color/backgroundThirdActivity"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent" >
 
 
@@ -11,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_margin="24dp"
         tools:context=".presentation.ResultOrderFragment">
 
         <TextView
@@ -104,6 +106,12 @@
             android:textColor="@color/textColorForThird"
             android:text="@string/sirop_count">
         </TextView>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="162dp"
+            android:contentDescription="@string/the_cup_of_coffee"
+            android:src="@drawable/coffee_mug" />
 
     </LinearLayout>
 </ScrollView>

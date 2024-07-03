@@ -20,6 +20,7 @@
     <string name="your_order">Ваш заказ:</string>
     <string name="drinks">Напиток</string>
     <string name="Order">Заказать</string>
+    <string name="the_cup_of_coffee">the_cup_of_coffee</string>
 
 
     <string-array name="types_of_tea">
