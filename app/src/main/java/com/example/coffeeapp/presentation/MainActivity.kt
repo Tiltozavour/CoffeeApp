@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
+import com.example.coffeeapp.R
 import com.example.coffeeapp.databinding.ActivityMainBinding
 import com.example.coffeeapp.domain.User
 import com.example.coffeeapp.presentation.viewModel.LogInViewModel
@@ -32,10 +33,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonSignIn.setOnClickListener {
           if (validate())
-          { binding.textViewWelcome.text = "GOT IT"
+          { binding.textViewWelcome.text = resources.getText(R.string.success)
             launchNextPage()
           }
-            else { binding.textViewWelcome.text = "Wrong login or password" }
+            else { binding.textViewWelcome.text = resources.getText(R.string.warning_wrong_info) }
         }
 
 
@@ -45,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         val login:String = binding.EditLoginString.text.toString().trim()
         val password:String = binding.EditLoginPassword.text.toString().trim()
         if (login.isEmpty() && password.isEmpty()) {
-            Toast.makeText(this, "Заполните все поля!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.warning_empty_toast, Toast.LENGTH_SHORT).show()
             return false
         } else  return  viewModel.validateUser(User(login,password))
     }

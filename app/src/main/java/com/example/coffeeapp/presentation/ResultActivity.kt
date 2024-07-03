@@ -29,8 +29,6 @@ class ResultActivity : AppCompatActivity() {
         }
         getOrderForTextView()
 
-
-
     }
 
     private fun getOrderForTextView(){

@@ -21,6 +21,11 @@
     <string name="drinks">Напиток</string>
     <string name="Order">Заказать</string>
     <string name="the_cup_of_coffee">the_cup_of_coffee</string>
+    <string name="warning_empty_toast">Заполните все поля!</string>
+    <string name="warning_wrong_info">Неправильный логин или пороль</string>
+    <string name="success">Got it!</string>
+    <string name="warning_null_choice_drink">Нужно всё-таки что-то выбрать</string>
+
 
 
     <string-array name="types_of_tea">

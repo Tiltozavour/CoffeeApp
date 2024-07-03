@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,10 +17,6 @@ import com.example.coffeeapp.presentation.viewModel.OrderViewModel
 
 class OrderActivity : AppCompatActivity() {
 
-     var DRINK = ""
-     var TYPE_OF_DRINK = ""
-     var SUGAR = ""
-     var SIROP = ""
 
     private val binding by lazy {
         ActivityOrderBinding.inflate(layoutInflater)
@@ -147,21 +144,31 @@ class OrderActivity : AppCompatActivity() {
     }
 
 
-    private fun launchNextPage(){
+    private fun launchNextPage() {
         binding.buttonNextPage.setOnClickListener {
-            TYPE_OF_DRINK =  binding.spinnerChoiceDrink.selectedItem.toString()
-            SUGAR = binding.spinnerAddictiveSugar.selectedItem.toString()
-            if ( binding.spinnerAddictiveSirop.visibility == View.VISIBLE){
-                SIROP = binding.spinnerAddictiveSirop.selectedItem.toString()
-            } else SIROP = KEY_NOTHING
-
-            val intent = ResultActivity.newIntent(this, DRINK, TYPE_OF_DRINK,SUGAR,SIROP)
-            startActivity(intent)
+           if (binding.cacaoRadio.isChecked|| binding.teaRadio.isChecked||binding.coffeeRadio.isChecked) {
+               TYPE_OF_DRINK = binding.spinnerChoiceDrink.selectedItem.toString()
+               SUGAR = binding.spinnerAddictiveSugar.selectedItem.toString()
+               if (binding.spinnerAddictiveSirop.visibility == View.VISIBLE) {
+                   SIROP = binding.spinnerAddictiveSirop.selectedItem.toString()
+               } else SIROP = KEY_NOTHING
+               val intent = ResultActivity.newIntent(this, DRINK, TYPE_OF_DRINK, SUGAR, SIROP)
+               startActivity(intent)
+           } else {
+               Toast.makeText(this,
+                   R.string.warning_null_choice_drink,
+                   Toast.LENGTH_SHORT).show()
+           }
         }
-
     }
 
+
     companion object {
+
+        private var DRINK = ""
+        private var TYPE_OF_DRINK = ""
+        private var SUGAR = ""
+        private var SIROP = ""
 
         private var typeOfDrink = "Nothing"
         private var typeOfDrinkLabel = "Nothing"
